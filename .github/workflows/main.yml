@@ -23,4 +23,4 @@ jobs:
             campaignReference: ${{ secrets.PERKEXCHANGE_CAMPAIGNREFERENCE }}
             userId: ${{ github.event.pull_request.user.id }}
             platform: github
-            amount: 1
+            amount: 100
