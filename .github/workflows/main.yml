@@ -1,0 +1,26 @@
+# This is a basic workflow to reward your developers with cryptocurrency using Perk.Exchange
+
+name: Perk.Exchange
+
+on:
+  pull_request:
+    types: [ closed ]
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  rewards:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      # Rewards the user who opened the PR with cryptocurrency       
+      - uses: perkexchange/github-action@v0.7-alpha
+        name: Perk.Exchange Reward
+        with:
+            apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
+            campaignReference: ${{ secrets.PERKEXCHANGE_CAMPAIGNREFERENCE }}
+            userId: ${{ github.event.pull_request.user.id }}
+            platform: github
+            amount: 1
