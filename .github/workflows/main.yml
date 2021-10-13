@@ -19,7 +19,7 @@ jobs:
       - uses: perkexchange/github-action@v0.7-alpha
         name: Perk.Exchange Reward
         with:
-            campaignReference: ${{ secrets.PERKEXCHANGE_CAMPAIGNREFERENCE }}
+            campaignReference: ${{ secrets.PERKEXCHANGE_CAMPAIGNSECRET }}
             userId: ${{ github.event.pull_request.user.id }}
             platform: github
             amount: 100
